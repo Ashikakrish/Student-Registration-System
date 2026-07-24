@@ -1,0 +1,471 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background: linear-gradient(135deg, #FFF7F3, #FFF0F5, #FFF7F3);
+    background-size: 200% 200%;
+    animation: bgMove 8s ease infinite;
+    color: #444;
+    overflow-x: hidden;
+
+}
+
+
+
+.background {
+
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    z-index: -1;
+
+}
+
+.background span {
+
+    position: absolute;
+    border-radius: 50%;
+    opacity: .25;
+    animation: float 18s linear infinite;
+
+}
+
+.background span:nth-child(1) {
+
+    width: 180px;
+    height: 180px;
+    background: #FFD6D6;
+    left: 10%;
+    top: 10%;
+
+}
+
+.background span:nth-child(2) {
+
+    width: 120px;
+    height: 120px;
+    background: #FFE5B4;
+    right: 10%;
+    top: 20%;
+
+}
+
+.background span:nth-child(3) {
+
+    width: 150px;
+    height: 150px;
+    background: #FADADD;
+    left: 20%;
+    bottom: 15%;
+
+}
+
+.background span:nth-child(4) {
+
+    width: 90px;
+    height: 90px;
+    background: #FFE8CC;
+    right: 20%;
+    bottom: 20%;
+
+}
+
+.background span:nth-child(5) {
+
+    width: 130px;
+    height: 130px;
+    background: #FFD6D6;
+    left: 45%;
+    top: 65%;
+
+}
+
+
+.container {
+
+    width: 100%;
+    max-width: 480px;
+    padding: 20px;
+
+}
+
+
+.card {
+
+    background: #ffffff;
+    padding: 35px;
+    border-radius: 18px;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, .08);
+    animation: fadeIn .8s ease;
+    transition: .3s;
+
+}
+
+.card:hover {
+
+    transform: translateY(-5px);
+    box-shadow: 0 18px 35px rgba(0, 0, 0, .10);
+
+}
+
+
+.header {
+
+    text-align: center;
+
+    margin-bottom: 25px;
+
+}
+
+.logo {
+
+    width: 70px;
+    height: 70px;
+    margin: auto;
+    border-radius: 50%;
+    background: #FF8A8A;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 30px;
+    margin-bottom: 15px;
+
+}
+
+.header h1 {
+
+    font-size: 30px;
+    color: #444;
+    margin-bottom: 8px;
+
+}
+
+.header p {
+
+    font-size: 14px;
+    color: #777;
+
+}
+
+
+.input-box {
+
+    margin-bottom: 18px;
+
+}
+
+label {
+
+    display: block;
+    margin-bottom: 8px;
+    font-size: 15px;
+    font-weight: 500;
+    color: #555;
+
+}
+
+label i {
+
+    margin-right: 8px;
+    color: #FF8A8A;
+
+}
+
+input,
+select {
+
+    width: 100%;
+    padding: 13px;
+    border: 2px solid #F1E4DD;
+    border-radius: 10px;
+    font-size: 15px;
+    background: #fffdfc;
+    transition: .3s;
+
+}
+
+input:focus,
+select:focus {
+
+    outline: none;
+    border-color: #FF8A8A;
+    box-shadow: 0 0 10px rgba(255, 138, 138, .25);
+
+}
+
+
+button {
+
+    width: 100%;
+
+    padding: 14px;
+
+    border: none;
+
+    border-radius: 10px;
+
+    background: #FF8A8A;
+
+    color: white;
+
+    font-size: 16px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: .3s;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    gap: 10px;
+
+}
+
+button:hover {
+
+    background: #ff7272;
+
+    transform: translateY(-3px);
+
+}
+
+button:disabled {
+
+    opacity: .7;
+
+    cursor: not-allowed;
+
+}
+
+/* ===========================
+   Loader
+=========================== */
+
+.loader {
+
+    display: none;
+
+    width: 18px;
+
+    height: 18px;
+
+    border: 3px solid white;
+
+    border-top: 3px solid transparent;
+
+    border-radius: 50%;
+
+    animation: spin .8s linear infinite;
+
+}
+
+/* ===========================
+   Toast
+=========================== */
+
+#toast {
+
+    position: fixed;
+
+    top: 20px;
+
+    right: 20px;
+
+    background: #7BC47F;
+
+    color: white;
+
+    padding: 15px 20px;
+
+    border-radius: 10px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    box-shadow: 0 10px 20px rgba(0, 0, 0, .15);
+
+    opacity: 0;
+
+    pointer-events: none;
+
+    transform: translateX(100px);
+
+    transition: .4s;
+
+    font-size: 15px;
+
+}
+
+#toast.show {
+
+    opacity: 1;
+
+    pointer-events: auto;
+
+    transform: translateX(0);
+
+}
+
+#toast i {
+
+    font-size: 18px;
+
+}
+
+/* ===========================
+   Footer
+=========================== */
+
+footer {
+
+    margin-top: 20px;
+
+    font-size: 13px;
+
+    color: #777;
+
+    text-align: center;
+
+}
+
+/* ===========================
+   Animations
+=========================== */
+
+@keyframes fadeIn {
+
+    from {
+
+        opacity: 0;
+
+        transform: translateY(30px);
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform: translateY(0);
+
+    }
+
+}
+
+@keyframes spin {
+
+    100% {
+
+        transform: rotate(360deg);
+
+    }
+
+}
+
+@keyframes bgMove {
+
+    0% {
+
+        background-position: 0% 50%;
+
+    }
+
+    50% {
+
+        background-position: 100% 50%;
+
+    }
+
+    100% {
+
+        background-position: 0% 50%;
+
+    }
+
+}
+
+@keyframes float {
+
+    0% {
+
+        transform: translateY(0px) rotate(0deg);
+
+    }
+
+    50% {
+
+        transform: translateY(-25px) rotate(180deg);
+
+    }
+
+    100% {
+
+        transform: translateY(0px) rotate(360deg);
+
+    }
+
+}
+
+/* ===========================
+   Responsive
+=========================== */
+
+@media(max-width:600px) {
+
+    .container {
+
+        padding: 15px;
+
+    }
+
+    .card {
+
+        padding: 25px;
+
+    }
+
+    .header h1 {
+
+        font-size: 24px;
+
+    }
+
+    .logo {
+
+        width: 60px;
+
+        height: 60px;
+
+        font-size: 25px;
+
+    }
+
+    button {
+
+        padding: 13px;
+
+    }
+
+}

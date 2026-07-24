@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Student Registration System</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+</head>
+
+<body>
+
+    <!-- Animated Background -->
+    <div class="background">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+
+    <!-- Main Container -->
+
+    <div class="container">
+
+        <div class="card">
+
+            <div class="header">
+
+                <div class="logo">
+                    <i class="fa-solid fa-user-graduate"></i>
+                </div>
+
+                <h1>Student Registration</h1>
+
+                <p>
+                    Register your details securely.
+                </p>
+
+            </div>
+
+            <form id="studentForm">
+
+                <div class="input-box">
+
+                    <label>
+                        <i class="fa-solid fa-user"></i>
+                        Full Name
+                    </label>
+
+                    <input
+                        type="text"
+                        id="name"
+                        placeholder="Enter Full Name">
+
+                </div>
+
+                <div class="input-box">
+
+                    <label>
+                        <i class="fa-solid fa-envelope"></i>
+                        Email
+                    </label>
+
+                    <input
+                        type="email"
+                        id="email"
+                        placeholder="Enter Email">
+
+                </div>
+
+                <div class="input-box">
+
+                    <label>
+                        <i class="fa-solid fa-phone"></i>
+                        Phone Number
+                    </label>
+
+                    <input
+                        type="text"
+                        id="phone"
+                        maxlength="10"
+                        placeholder="Enter Phone Number">
+
+                </div>
+
+                <div class="input-box">
+
+                    <label>
+                        <i class="fa-solid fa-building-columns"></i>
+                        Department
+                    </label>
+
+                    <select id="department">
+
+                        <option value="">Choose Department</option>
+
+                        <option>CSE</option>
+
+                        <option>IT</option>
+
+                        <option>ECE</option>
+
+                        <option>EEE</option>
+
+                        <option>Mechanical</option>
+
+                        <option>Civil</option>
+
+                    </select>
+
+                </div>
+
+                <div class="input-box">
+
+                    <label>
+                        <i class="fa-solid fa-calendar"></i>
+                        Year
+                    </label>
+
+                    <select id="year">
+
+                        <option value="">Choose Year</option>
+
+                        <option>1st Year</option>
+
+                        <option>2nd Year</option>
+
+                        <option>3rd Year</option>
+
+                        <option>4th Year</option>
+
+                    </select>
+
+                </div>
+
+                <button id="submitBtn">
+
+                    <span id="btnText">
+
+                        Register Student
+
+                    </span>
+
+                    <span id="loader" class="loader"></span>
+
+                </button>
+
+            </form>
+
+        </div>
+
+    </div>
+
+    <!-- Toast Notification -->
+
+    <div id="toast">
+
+        <i id="toastIcon"></i>
+
+        <span id="toastMessage">
+
+            Success
+
+        </span>
+
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
