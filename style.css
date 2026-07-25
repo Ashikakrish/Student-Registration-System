@@ -12,7 +12,7 @@ body {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    background: linear-gradient(135deg, #FFF7F3, #FFF0F5, #FFF7F3);
+    background: linear-gradient(135deg, #db6022, #FFF0F5, #FFF7F3);
     background-size: 200% 200%;
     animation: bgMove 8s ease infinite;
     color: #444;
@@ -37,7 +37,7 @@ body {
 .background span {
 
     position: absolute;
-    border-radius: 50%;
+    border-radius: 25%;
     opacity: .25;
     animation: float 18s linear infinite;
 
@@ -80,16 +80,6 @@ body {
     background: #FFE8CC;
     right: 20%;
     bottom: 20%;
-
-}
-
-.background span:nth-child(5) {
-
-    width: 130px;
-    height: 130px;
-    background: #FFD6D6;
-    left: 45%;
-    top: 65%;
 
 }
 
@@ -284,16 +274,6 @@ button:disabled {
     font-size: 18px;
 
 }
-
-
-/* footer {
-
-    margin-top: 20px;
-    font-size: 13px;
-    color: #777;
-    text-align: center;
-
-} */
 
 
 @keyframes fadeIn {
