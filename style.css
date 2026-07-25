@@ -286,14 +286,14 @@ button:disabled {
 }
 
 
-footer {
+/* footer {
 
     margin-top: 20px;
     font-size: 13px;
     color: #777;
     text-align: center;
 
-}
+} */
 
 
 @keyframes fadeIn {
